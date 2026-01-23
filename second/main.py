@@ -16,10 +16,13 @@ def get_cats_info(path):
         return cats
     except FileNotFoundError:
         print(f"Помилка: Файл за шляхом '{path}' не знайдено.")
+        return []
     except ValueError:
         print("Помилка: Файл містить некоректні дані.")
+        return []
     except Exception as e:
         print(f"Сталася непередбачена помилка: {e}")
+        return []
 
 cats_info = get_cats_info("path/to/cats_file.txt")
 print(*cats_info, sep='\n')
